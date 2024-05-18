@@ -1,5 +1,6 @@
 FROM openjdk:17-alpine AS builder
-WORKDIR /p2
+WORKDIR .
+RUN ls -la
 COPY --from=builder /p2/build/libs/*.jar p2.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "p2.jar"]
