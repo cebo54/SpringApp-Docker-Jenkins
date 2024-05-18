@@ -4,7 +4,7 @@ WORKDIR /p2
 RUN ls -la
 RUN chmod +x gradlew
 RUN pwd
-RUN ./gradlew bootJar
+RUN ./p2/gradlew bootJar
 
 
 FROM openjdk:17-alpine
