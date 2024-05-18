@@ -32,7 +32,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/wfactions:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/p2:latest
 
         
   
