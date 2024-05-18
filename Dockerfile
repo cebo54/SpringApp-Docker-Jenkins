@@ -3,6 +3,7 @@ COPY . .
 WORKDIR /p2
 RUN ls -la
 RUN chmod +x gradlew
+RUN ls -la
 RUN ./gradlew bootJar
 
 
