@@ -17,7 +17,7 @@ services:
       retries: 5
 
   app:
-    build: .
+    image: cebrailkaya/p2:latest
     ports:
       - "8080:8080"
     environment:
