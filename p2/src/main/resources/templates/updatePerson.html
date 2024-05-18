@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Update Person</title>
+</head>
+<body>
+<h1>Update Person</h1>
+<form action="/updatePerson" method="post" enctype="multipart/form-data" th:object="${person}">
+  <input type="hidden" id="id" name="id" th:value="${person.id}">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" th:value="${person.name}"><br>
+  <label for="address">Address:</label>
+  <input type="text" id="address" name="address" th:value="${person.address}"><br>
+  <label for="imageFile">Image:</label>
+  <input type="file" id="imageFile" accept="image/png, image/jpeg" name="imageFile"><br>
+  <input type="submit" value="Update Person">
+</form>
+</body>
+</html>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    width: 100%;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+</style>

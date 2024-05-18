@@ -1,37 +1,37 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http:www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>User List</title>
+    <meta charset="UTF-8">
+    <title>User List</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <h1>User List</h1>
-<table border="1">
-  <thead>
-  <tr>
-    <th>ID</th>
-    <th>Name</th>
-    <th>Address</th>
-    <th>Actions</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr th:each="user : ${userList}">
-    <td th:text="${user.id}"></td>
-    <td th:text="${user.name}"></td>
-    <td th:text="${user.address}"></td>
-    <td>
-      <form th:action="@{/update/{id}(id=${user.id})}" method="get">
-        <button type="submit">Update</button>
-      </form>
-      <form th:action="@{/delete/{id}(id=${user.id})}" method="post">
-        <button type="submit">Delete</button>
-      </form>
-    </td>
-  </tr>
-  </tbody>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>ADDRESS</th>
+        <th>IMAGE</th>
+        <th>ACTION</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="p:${plist}">
+        <td th:text="${p.id}"></td>
+        <td th:text="${p.name}"></td>
+        <td th:text="${p.address}"></td>
+        <td>
+            <img th:src="${p.imgUrl}" alt="Resim" style="max-width: 100px; display: block;">
+        </td>
+        <td>
+            <a th:href="@{/updatePerson/{id}(id=${p.id})}" class="update-btn">Update</a>
+            <a th:href="@{/deletePerson/{id}(id=${p.id})}" class="delete-btn">Delete</a>
+        </td>
+    </tr>
+    </tbody>
 </table>
-<br>
-<button><a th:href="@{/create}">Create User</a></button>
+<a th:href="@{/addPerson}" class="add-button">Add Person</a>
 </body>
 </html>

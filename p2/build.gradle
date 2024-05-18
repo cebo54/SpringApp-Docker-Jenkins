@@ -25,12 +25,17 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'com.amazonaws:aws-java-sdk-s3:1.12.470'
 	compileOnly 'org.projectlombok:lombok'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'org.postgresql:postgresql'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'com.amazonaws:aws-java-sdk:1.12.701'
+	implementation 'software.amazon.awssdk:s3:2.17.92'
+	implementation 'software.amazon.awssdk:regions:2.17.92'
+	implementation 'software.amazon.awssdk:auth:2.17.92'
+	implementation 'software.amazon.awssdk:core:2.17.92'
+	implementation 'software.amazon.awssdk:dynamodb:2.17.92'
+	implementation 'software.amazon.awssdk:textract:2.17.92'
 }
 
 springBoot {
