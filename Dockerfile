@@ -1,7 +1,7 @@
 FROM openjdk:17-alpine
 
 # Set working directory
-WORKDIR /p2
+WORKDIR .
 
 RUN ls -la
 
