@@ -8,7 +8,7 @@ RUN ./gradlew bootJar
 
 FROM openjdk:17-alpine
 WORKDIR .
-COPY --from=builder build/libs/*.jar p2.jar
+COPY --from=builder /p2/build/libs/*.jar p2.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "p2.jar"]
 ENV SPRING_DATASOURCE_USERNAME=postgres
