@@ -1,6 +1,6 @@
 FROM openjdk:17-alpine AS builder
 COPY . .
-WORKDIR /p2
+WORKDIR .
 RUN ls -la
 RUN chmod +x gradlew
 RUN pwd
