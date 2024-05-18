@@ -2,6 +2,7 @@ FROM openjdk:17-alpine AS builder
 COPY . .
 WORKDIR /p2
 RUN ls -la
+RUN chmod +x gradlew
 RUN ./gradlew bootJar
 
 
