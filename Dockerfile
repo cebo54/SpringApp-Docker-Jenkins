@@ -3,6 +3,8 @@ FROM openjdk:17-alpine
 # Set working directory
 WORKDIR /p2
 
+RUN ls -la
+
 # Copy the built JAR file from Jenkins workspace into the Docker image
 COPY build/libs/*.jar p2.jar
 
