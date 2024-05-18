@@ -1,11 +1,14 @@
+# First stage: build the application
 FROM openjdk:17-alpine AS builder
+WORKDIR /app
 COPY . .
-WORKDIR .
+RUN chmod +x ./gradlew
 RUN ./gradlew bootJar
 
+# Second stage: run the application
 FROM openjdk:17-alpine
-WORKDIR .
-COPY --from=builder build/libs/*.jar app.jar
+WORKDIR /app
+COPY --from=builder /app/build/libs/*.jar app.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]
 
