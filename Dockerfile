@@ -1,10 +1,10 @@
 FROM openjdk:17-alpine AS builder
 COPY . .
-WORKDIR .
-RUN ls -la
+WORKDIR /p2
+RUN ls -la /p2/
 RUN chmod +x gradlew
 RUN pwd
-RUN ./p2/gradlew bootJar
+RUN ./p2/p2/gradlew bootJar
 
 
 FROM openjdk:17-alpine
