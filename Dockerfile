@@ -1,10 +1,16 @@
-FROM openjdk:17-alpine AS builder
-WORKDIR .
-RUN ls -la
-COPY --from=builder /p2/build/libs/*.jar p2.jar
-EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "p2.jar"]
+FROM openjdk:17-alpine
 
+# Set working directory
+WORKDIR /p2
+
+# Copy the built JAR file from Jenkins workspace into the Docker image
+COPY build/libs/*.jar p2.jar
+
+# Expose port
+EXPOSE 8080
+
+# Command to run the application
+ENTRYPOINT ["java", "-jar", "p2.jar"]
 
 
 ENV SPRING_DATASOURCE_USERNAME=postgres
