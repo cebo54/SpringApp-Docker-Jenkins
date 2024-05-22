@@ -21,7 +21,7 @@ jobs:
       - name: Set up Gradle
         uses: gradle/gradle-build-action@v2
         with:
-          gradle-version: '7.3.3' # gradle-wrapper.properties dosyanızdaki sürüme uygun olarak ayarlayın
+          gradle-version: '8.7' # gradle-wrapper.properties dosyanızdaki sürüme uygun olarak ayarlayın
 
       - name: Build with Gradle
         run: gradle build
