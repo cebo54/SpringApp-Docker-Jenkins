@@ -21,7 +21,7 @@ jobs:
       - name: Set up Gradle
         uses: gradle/gradle-build-action@v2
         with:
-          gradle-version: '8.7' # gradle-wrapper.properties dosyanızdaki sürüme uygun olarak ayarlayın
+          gradle-version: '8.7' 
 
       - name: Build with Gradle
         run: gradle build
@@ -32,6 +32,7 @@ jobs:
       - name: Deploy
         run: |
           echo "Deploying application"
+          java -jar build/libs/p2.jar
         env:
           AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
           AWS_SECRET_KEY: ${{ secrets.AWS_SECRET_KEY }}
