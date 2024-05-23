@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: p2-service
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
     app: p2
   ports:
