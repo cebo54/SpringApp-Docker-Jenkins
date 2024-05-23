@@ -77,7 +77,7 @@ public class HomeController {
             model.addAttribute("person", optionalPerson.get());
             return "updatePerson";
         } else {
-            return "redirect:/";
+            return "redirect:";
         }
     }
 
@@ -110,7 +110,7 @@ public class HomeController {
             // Update the user with the image URL
             personRepository.save(person);
 
-            return "redirect:/";
+            return "redirect:";
         } catch (IOException e) {
             e.printStackTrace();
             return "Failed to upload file";
@@ -124,7 +124,7 @@ public class HomeController {
             model.addAttribute("person", optionalPerson.get());
             return "deletePerson";
         } else {
-            return "redirect:/";
+            return "redirect:";
         }
     }
 
@@ -137,7 +137,7 @@ public class HomeController {
                 personRepository.deleteById(optionalPerson.get().getId());
                 documentService.deleteFileFromS3(awsClientConfig.getBucketName(), key);
             }
-            return "redirect:/";
+            return "redirect:";
         } catch (NullPointerException e) {
             return e.getMessage();
         }
